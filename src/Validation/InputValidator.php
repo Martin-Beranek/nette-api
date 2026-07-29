@@ -110,6 +110,9 @@ class InputValidator
         return $value;
     }
 
+    /**
+     * @param mixed[] $value
+     */
     private function validateMulti(array $value, string $expectedType): ValidationResultInterface
     {
         foreach ($value as $item) {
@@ -121,6 +124,10 @@ class InputValidator
         return new ValidationResult(ValidationResult::STATUS_OK);
     }
 
+    /**
+     * @param mixed[] $value
+     * @return mixed[]
+     */
     private function transformMulti(array $value, string $expectedType): array
     {
         foreach ($value as $key => $item) {
